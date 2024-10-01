@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://combomaker.net/
+
+# Sitemaps
+Sitemap: https://combomaker.net/sitemap.xml

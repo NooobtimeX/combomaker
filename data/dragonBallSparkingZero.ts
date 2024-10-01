@@ -1,0 +1,76 @@
+const dragonBallSparkingZero = {
+  id: "dragon_ball_sparking_zero",
+  name: "Dragon Ball: Sparking Zero",
+  img: "/game/dragonballsparkingzero.png",
+  items: [
+    {
+      name: "Playstation",
+      items: [
+        { name: "Left", img: "/playstation_5/D-Pad Left.png" },
+        { name: "Down", img: "/playstation_5/D-Pad Down.png" },
+        { name: "Right", img: "/playstation_5/D-Pad Right.png" },
+        { name: "Up", img: "/playstation_5/D-Pad Up.png" },
+        { name: "Left", img: "/playstation_5/Left Stick Left.png" },
+        { name: "Down", img: "/playstation_5/Left Stick Down.png" },
+        { name: "Right", img: "/playstation_5/Left Stick Right.png" },
+        { name: "Up", img: "/playstation_5/Left Stick Up.png" },
+        { name: "Left", img: "/playstation_5/Right Stick Left.png" },
+        { name: "Down", img: "/playstation_5/Right Stick Down.png" },
+        { name: "Right", img: "/playstation_5/Right Stick Right.png" },
+        { name: "Up", img: "/playstation_5/Right Stick Up.png" },
+        { name: "", img: "/playstation_5/Left Stick Click.png" },
+        { name: "", img: "/playstation_5/Right Stick Click.png" },
+        { name: "Rush Attack", img: "/playstation_5/Square.png" },
+        { name: "Step", img: "/playstation_5/Cross.png" },
+        { name: "Perception", img: "/playstation_5/Circle.png" },
+        { name: "Ki Blast", img: "/playstation_5/Triangle.png" },
+        { name: "Ascend", img: "/playstation_5/L1.png" },
+        { name: "Descend", img: "/playstation_5/L2.png" },
+        { name: "Guard", img: "/playstation_5/R1.png" },
+        { name: "Ki Charge", img: "/playstation_5/R2.png" },
+      ],
+    },
+    {
+      name: "Xbox",
+      items: [
+        { name: "Left", img: "/xbox/D-Pad Left.png" },
+        { name: "Down", img: "/xbox/D-Pad Down.png" },
+        { name: "Right", img: "/xbox/D-Pad Right.png" },
+        { name: "Up", img: "/xbox/D-Pad Up.png" },
+        { name: "Left", img: "/xbox/Left Stick Left.png" },
+        { name: "Down", img: "/xbox/Left Stick Down.png" },
+        { name: "Right", img: "/xbox/Left Stick Right.png" },
+        { name: "Up", img: "/xbox/Left Stick Up.png" },
+        { name: "Left", img: "/playstation_5/Right Stick Left.png" },
+        { name: "Down", img: "/playstation_5/Right Stick Down.png" },
+        { name: "Right", img: "/playstation_5/Right Stick Right.png" },
+        { name: "Up", img: "/playstation_5/Right Stick Up.png" },
+        { name: "", img: "/playstation_5/Left Stick Click.png" },
+        { name: "", img: "/playstation_5/Right Stick Click.png" },
+        { name: "Rush Attack", img: "/xbox/X.png" },
+        { name: "Step", img: "/xbox/A.png" },
+        { name: "Perception", img: "/xbox/B.png" },
+        { name: "Ki Blast", img: "/xbox/Y.png" },
+        { name: "Ascend", img: "/xbox/Left Bumper.png" },
+        { name: "Descend", img: "/xbox/Left Trigger.png" },
+        { name: "Guard", img: "/xbox/Right Bumper.png" },
+        { name: "Ki Charge", img: "/xbox/Right Trigger.png" },
+      ],
+    },
+    {
+      name: "Special",
+      items: [
+        { name: "next", img: "/tekken8/button/next.webp" },
+        { name: "+", img: "/2xko/button/+.png" },
+      ],
+    },
+  ].map((category, categoryIndex) => ({
+    ...category,
+    items: category.items.map((item, itemIndex) => ({
+      ...item,
+      id: categoryIndex * 100 + itemIndex, // Ensure unique IDs across categories
+    })),
+  })),
+};
+
+export default dragonBallSparkingZero;
