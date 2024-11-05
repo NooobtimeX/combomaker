@@ -18,19 +18,20 @@ const links = [
 
 const images = [
   {
-    src: "/game/2xko.svg",
-    alt: "Tekken 8",
-    href: "https://tk8.tekken-official.jp/en/",
+    alt: "2xko",
+    src: "/game/icon/2xko.png",
   },
   {
-    src: "/game/dragonballsparkingzero.png",
-    alt: "Tekken 8",
-    href: "https://tk8.tekken-official.jp/en/",
+    name: "Dragon Ball: Sparking Zero",
+    src: "/game/icon/dragonballsparkingzero.jpg",
   },
   {
-    src: "/game/tekken8.png",
     alt: "Tekken 8",
-    href: "https://tk8.tekken-official.jp/en/",
+    src: "/game/icon/tekken8.jpg",
+  },
+  {
+    alt: "Street Fighter 6",
+    src: "/game/icon/streetfighter6.jpg",
   },
 ];
 
@@ -54,7 +55,7 @@ const Footer: React.FC = () => {
         ))}
         <div className="col-span-2 m-auto mx-auto flex max-w-sm flex-nowrap justify-center gap-2">
           {images.map((image, index) => (
-            <a key={index} href={image.href} className="m-auto">
+            <a key={index} className="m-auto">
               <img
                 className="my-auto rounded-xl object-cover"
                 src={image.src}

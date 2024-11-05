@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
-import { FaSave } from "react-icons/fa";
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
+import { FaTrash, FaUndo, FaRedo, FaSave } from "react-icons/fa";
 import { ComboDisplayProps, GameItem } from "@/interface/interface";
 
 const ComboDisplay: React.FC<ComboDisplayProps> = ({
@@ -8,9 +9,15 @@ const ComboDisplay: React.FC<ComboDisplayProps> = ({
   setIsModalOpen,
   handleAddItem,
   undoStack,
+  redoStack,
+  handleDeleteLast,
+  handleReset,
+  handleUndo,
+  handleRedo,
   setUserCreation,
   setUndoStack,
   setRedoStack,
+  setComboName,
 }) => {
   const comboRef = useRef<HTMLDivElement | null>(null);
 
@@ -33,7 +40,76 @@ const ComboDisplay: React.FC<ComboDisplayProps> = ({
   }, [userCreation, movesForGame]);
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
+        <button
+          aria-label="Delete last action"
+          className="flex w-full items-center justify-center rounded-lg border border-red-500 px-6 py-3 shadow-lg transition duration-200 hover:bg-red-500 disabled:cursor-not-allowed"
+          onClick={() =>
+            handleDeleteLast(
+              userCreation,
+              undoStack,
+              setUserCreation,
+              setUndoStack,
+              setRedoStack,
+            )
+          }
+          disabled={userCreation.length === 0}
+        >
+          <MdOutlineKeyboardBackspace />
+        </button>
+        <button
+          aria-label="Reset"
+          className="flex w-full items-center justify-center rounded-lg border border-red-500 px-6 py-3 shadow-lg transition duration-200 hover:bg-red-500 disabled:cursor-not-allowed"
+          onClick={() =>
+            handleReset(
+              userCreation,
+              undoStack,
+              setUserCreation,
+              setUndoStack,
+              setRedoStack,
+              setComboName,
+            )
+          }
+        >
+          <FaTrash />
+        </button>
+        <button
+          aria-label="Undo"
+          className="flex w-full items-center justify-center rounded-lg border border-yellow-500 px-6 py-3 shadow-lg transition duration-200 hover:bg-yellow-500 disabled:cursor-not-allowed"
+          onClick={() =>
+            handleUndo(
+              userCreation,
+              undoStack,
+              redoStack,
+              setUserCreation,
+              setUndoStack,
+              setRedoStack,
+            )
+          }
+          disabled={undoStack.length === 0}
+        >
+          <FaUndo />
+        </button>
+        <button
+          aria-label="Redo"
+          className="flex w-full items-center justify-center rounded-lg border border-yellow-500 px-6 py-3 shadow-lg transition duration-200 hover:bg-yellow-500 disabled:cursor-not-allowed"
+          onClick={() =>
+            handleRedo(
+              userCreation,
+              undoStack,
+              redoStack,
+              setUserCreation,
+              setUndoStack,
+              setRedoStack,
+            )
+          }
+          disabled={redoStack.length === 0}
+        >
+          <FaRedo />
+        </button>
+      </div>
+
       <div className="relative flex min-h-[150px] flex-col rounded-lg border border-gray-700 p-4">
         {userCreation.length === 0 ? (
           <p className="text-center text-gray-400">
@@ -78,7 +154,7 @@ const ComboDisplay: React.FC<ComboDisplayProps> = ({
           <FaSave className="m-auto" />
         </button>
       </div>
-      <h2 className="text-center">Available Button</h2>
+      <h2 className="text-center">Available Moves</h2>
       {movesForGame.map((category) => (
         <div key={category.name} className="rounded-lg bg-gray-800 pb-2">
           <h3 className="text-center text-lg font-bold">{category.name}</h3>

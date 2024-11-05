@@ -1,7 +1,7 @@
 const dragonBallSparkingZero = {
   id: "dragon_ball_sparking_zero",
   name: "Dragon Ball: Sparking Zero",
-  img: "/game/dragonballsparkingzero.png",
+  img: "/game/icon/dragonballsparkingzero.jpg",
   items: [
     {
       name: "Playstation",

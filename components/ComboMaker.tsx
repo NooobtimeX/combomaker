@@ -12,7 +12,6 @@ import {
 import { games } from "@/data/games";
 import PhotoConfigurationModal from "@/components/PhotoConfigurationModal";
 import ComboDisplay from "@/components/ComboDisplay";
-import ActionButtons from "@/components/ActionButtons";
 import { ComboMakerProps } from "@/interface/interface";
 const ComboMaker: React.FC<ComboMakerProps> = ({ gameId }) => {
   const [userCreation, setUserCreation] = useState<number[]>([]);
@@ -51,19 +50,6 @@ const ComboMaker: React.FC<ComboMakerProps> = ({ gameId }) => {
     <div className="mx-auto max-w-7xl">
       <div className="flex flex-col gap-2 p-2">
         <div className="space-y-2">
-          <ActionButtons
-            userCreation={userCreation}
-            undoStack={undoStack}
-            redoStack={redoStack}
-            handleDeleteLast={handleDeleteLast}
-            handleReset={handleReset}
-            handleUndo={handleUndo}
-            handleRedo={handleRedo}
-            setUserCreation={setUserCreation}
-            setUndoStack={setUndoStack}
-            setRedoStack={setRedoStack}
-            setComboName={setComboName}
-          />
           <PhotoConfigurationModal
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
@@ -89,6 +75,12 @@ const ComboMaker: React.FC<ComboMakerProps> = ({ gameId }) => {
             setUserCreation={setUserCreation}
             setUndoStack={setUndoStack}
             setRedoStack={setRedoStack}
+            redoStack={redoStack}
+            handleDeleteLast={handleDeleteLast}
+            handleReset={handleReset}
+            handleUndo={handleUndo}
+            handleRedo={handleRedo}
+            setComboName={setComboName}
           />
         </div>
       </div>

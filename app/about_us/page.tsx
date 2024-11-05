@@ -24,17 +24,20 @@ export const metadata: Metadata = {
 
 const AboutUs: React.FC = () => {
   const images = [
-    { src: "/game/tekken8.png", alt: "Tekken 8" },
-    { src: "/game/tekken8.png", alt: "Tekken 8" },
-    { src: "/game/tekken8.png", alt: "Tekken 8" },
-    { src: "/game/tekken8.png", alt: "Tekken 8" },
+    { src: "/game/icon/tekken8.jpg", alt: "Tekken 8" },
+    { src: "/game/icon/2xko.png", alt: "2xko" },
+    {
+      src: "/game/icon/dragonballsparkingzero.jpg",
+      alt: "dragonball sparking zero",
+    },
+    { src: "/game/icon/streetfighter6.jpg", alt: "street fighter 6" },
   ];
 
   const statistics = [
-    { value: "?", label: "TEKKEN 8" },
-    { value: "?", label: "SF 6" },
-    { value: "?", label: "GGST" },
-    { value: "?", label: "2xko" },
+    { value: "", label: "Tekken 8" },
+    { value: "", label: "2xko" },
+    { value: "", label: "dragonball sparking zero" },
+    { value: "", label: "street fighter 6" },
   ];
 
   return (

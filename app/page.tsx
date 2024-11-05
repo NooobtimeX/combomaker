@@ -1,23 +1,28 @@
 import DisplayGames from "@/components/section/DisplayGames";
+import Button from "@/components/ui/Button";
 
 const games = [
   {
+    id: "2xko",
+    name: "2xko",
+    img: "/game/icon/2xko.png",
+  },
+  {
     id: "dragon_ball_sparking_zero",
     name: "Dragon Ball: Sparking Zero",
-    img: "/game/dragonballsparkingzero.png",
+    img: "/game/icon/dragonballsparkingzero.jpg",
   },
   {
     id: "tekken_8",
     name: "Tekken 8",
-    img: "/game/tekken8.png",
+    img: "/game/icon/tekken8.jpg",
   },
   {
     id: "street_fighter_6",
     name: "Street Fighter 6",
-    img: "/game/streetfighter6.webp",
+    img: "/game/icon/streetfighter6.jpg",
   },
 ];
-
 export default function HomePage() {
   return (
     <div className="min-h-screen">
@@ -29,12 +34,10 @@ export default function HomePage() {
               <h1 className="text-5xl font-bold text-green-600">
                 Combo Maker!
               </h1>
-              <p className="0 m-2 text-lg leading-8">
+              <p className="m-2 text-lg leading-8">
                 Craft your own combos and share them with the world!
               </p>
-              <button className="rounded-2xl border border-green-500 text-green-500 hover:bg-green-500 hover:text-white">
-                See all game
-              </button>
+              <Button text={"See all game"} variant="confirm" />
             </div>
           </div>
         </div>

@@ -50,9 +50,26 @@ export interface PhotoConfigurationModalProps {
   movesForGame: GameCategory[];
 }
 
-export interface ActionButtonsProps {
+export interface ComboMakerProps {
+  gameId: string;
+}
+
+export interface ComboDisplayProps {
   userCreation: number[];
+  movesForGame: GameCategory[];
+  setIsModalOpen: (isOpen: boolean) => void;
+  handleAddItem: (
+    item: GameItem,
+    userCreation: number[],
+    undoStack: number[][],
+    setUserCreation: React.Dispatch<React.SetStateAction<number[]>>,
+    setUndoStack: React.Dispatch<React.SetStateAction<number[][]>>,
+    setRedoStack: React.Dispatch<React.SetStateAction<number[][]>>,
+  ) => void;
   undoStack: number[][];
+  setUserCreation: React.Dispatch<React.SetStateAction<number[]>>;
+  setUndoStack: React.Dispatch<React.SetStateAction<number[][]>>;
+  setRedoStack: React.Dispatch<React.SetStateAction<number[][]>>;
   redoStack: number[][];
   handleDeleteLast: (
     userCreation: number[],
@@ -85,30 +102,5 @@ export interface ActionButtonsProps {
     setUndoStack: React.Dispatch<React.SetStateAction<number[][]>>,
     setRedoStack: React.Dispatch<React.SetStateAction<number[][]>>,
   ) => void;
-  setUserCreation: React.Dispatch<React.SetStateAction<number[]>>;
-  setUndoStack: React.Dispatch<React.SetStateAction<number[][]>>;
-  setRedoStack: React.Dispatch<React.SetStateAction<number[][]>>;
   setComboName: React.Dispatch<React.SetStateAction<string>>;
-}
-
-export interface ComboMakerProps {
-  gameId: string;
-}
-
-export interface ComboDisplayProps {
-  userCreation: number[];
-  movesForGame: GameCategory[];
-  setIsModalOpen: (isOpen: boolean) => void;
-  handleAddItem: (
-    item: GameItem,
-    userCreation: number[],
-    undoStack: number[][],
-    setUserCreation: React.Dispatch<React.SetStateAction<number[]>>,
-    setUndoStack: React.Dispatch<React.SetStateAction<number[][]>>,
-    setRedoStack: React.Dispatch<React.SetStateAction<number[][]>>,
-  ) => void;
-  undoStack: number[][];
-  setUserCreation: React.Dispatch<React.SetStateAction<number[]>>;
-  setUndoStack: React.Dispatch<React.SetStateAction<number[][]>>;
-  setRedoStack: React.Dispatch<React.SetStateAction<number[][]>>;
 }

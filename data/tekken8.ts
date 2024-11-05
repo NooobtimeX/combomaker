@@ -1,7 +1,7 @@
 const tekken8 = {
   id: "tekken_8",
   name: "Tekken 8",
-  img: "/game/tekken8.png",
+  img: "/game/icon/tekken8.jpg",
   items: [
     {
       name: "Directional",
