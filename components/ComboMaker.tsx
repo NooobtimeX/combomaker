@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import {
   getSavedState,
@@ -15,7 +13,8 @@ import { games } from "@/data/games";
 import PhotoConfigurationModal from "@/components/PhotoConfigurationModal";
 import ComboDisplay from "@/components/ComboDisplay";
 import ActionButtons from "@/components/ActionButtons";
-const ComboMaker = ({ gameId }: { gameId: string }) => {
+import { ComboMakerProps } from "@/interface/interface";
+const ComboMaker: React.FC<ComboMakerProps> = ({ gameId }) => {
   const [userCreation, setUserCreation] = useState<number[]>([]);
   const [undoStack, setUndoStack] = useState<number[][]>([]);
   const [redoStack, setRedoStack] = useState<number[][]>([]);

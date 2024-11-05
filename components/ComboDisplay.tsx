@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useRef, useEffect } from "react";
 import { FaSave } from "react-icons/fa";
 import { ComboDisplayProps, GameItem } from "@/interface/interface";
