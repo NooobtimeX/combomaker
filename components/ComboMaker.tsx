@@ -19,7 +19,7 @@ const ComboMaker: React.FC<ComboMakerProps> = ({ gameId }) => {
   const [redoStack, setRedoStack] = useState<number[][]>([]);
   const [comboName, setComboName] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [imgHeight, setImgHeight] = useState(300);
+  const [imgHeight, setImgHeight] = useState(500);
   const [shouldSwapHorizontal, setShouldSwapHorizontal] = useState(false);
   const [color, setColor] = useState({ r: 0, g: 0, b: 0, a: 0 });
 
@@ -30,13 +30,13 @@ const ComboMaker: React.FC<ComboMakerProps> = ({ gameId }) => {
     if (savedUserCreation) setUserCreation(savedUserCreation);
     if (savedUndoStack) setUndoStack(savedUndoStack);
     if (savedRedoStack) setRedoStack(savedRedoStack);
-  }, []);
+  }, [gameId]);
 
   useEffect(() => {
     saveState(gameId + "_userCreation", userCreation);
     saveState(gameId + "_undoStack", undoStack);
     saveState(gameId + "_redoStack", redoStack);
-  }, [userCreation, undoStack, redoStack]);
+  }, [userCreation, undoStack, redoStack, gameId]);
 
   const movesForGame = gameId
     ? games.find((game) => game.id === gameId)?.items || []

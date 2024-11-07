@@ -1,7 +1,7 @@
 const tekken8 = {
   id: "street_fighter_6",
   name: "Street Fighter 6",
-  img: "/game/icon/streetfighter6.jpg",
+  img: "/game/icon/streetfighter6.webp",
   items: [
     {
       name: "Directional",

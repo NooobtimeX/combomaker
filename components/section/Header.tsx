@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import Link from "next/link";
+import Image from "next/image";
 const navigation = [
   { name: "HOME", href: "/" },
   { name: "COMBO MAKER", href: "/game" },
@@ -24,18 +25,17 @@ export default function Header() {
               className="bg-800 inline-flex items-center justify-center p-2 text-white focus:outline-none focus:ring-2 focus:ring-inset"
             >
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon
-                className={`h-6 w-6 ${isMobileMenuOpen ? "hidden" : "block"}`}
-              />
-              <XMarkIcon
-                className={`h-6 w-6 ${isMobileMenuOpen ? "block" : "hidden"}`}
-              />
+              {isMobileMenuOpen ? (
+                <HiOutlineX className="h-6 w-6" />
+              ) : (
+                <HiOutlineMenu className="h-6 w-6" />
+              )}
             </button>
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0">
               <Link href="/">
-                <img
+                <Image
                   src="/favicon.ico"
                   className="w-9"
                   alt="HoYoSmash"

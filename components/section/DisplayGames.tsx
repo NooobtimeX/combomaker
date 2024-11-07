@@ -1,6 +1,7 @@
 "use client";
 
-import Button from "@/components/ui/Button";
+import Image from "next/image";
+import Link from "next/link";
 
 interface Game {
   id: string;
@@ -26,12 +27,13 @@ export default function DisplayGames({ games }: DisplayGamesProps) {
                 href={game.id}
                 className="aspect-w-1 aspect-h-1 block w-full overflow-hidden rounded-t-xl"
               >
-                <img
+                <Image
                   alt={game.name}
                   src={game.img}
                   className="h-full w-full rounded-xl object-cover"
-                  width={200}
-                  height={200}
+                  width={500}
+                  height={500}
+                  priority={index === 0}
                 />
               </a>
               <div className="flex flex-col items-center space-y-2">
@@ -39,11 +41,11 @@ export default function DisplayGames({ games }: DisplayGamesProps) {
                   {game.name}
                 </h2>
                 <div className="mx-auto flex w-full justify-center pb-2">
-                  <Button
-                    variant="confirm"
-                    text="CREATE COMBO"
-                    link={game.id}
-                  />
+                  <Link href={game.id}>
+                    <button className="border border-green-500 text-green-500 transition duration-200 hover:bg-green-500 hover:text-white">
+                      CREATE COMBO
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

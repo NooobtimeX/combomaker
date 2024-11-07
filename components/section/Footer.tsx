@@ -1,69 +1,59 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-  {
-    section: "Games",
-    items: [{ text: "All Game", href: "/game" }],
-  },
-  {
-    section: "Information",
-    items: [
-      { text: "About Us", href: "/about_us" },
-      { text: "Privacy Policy", href: "/privacy_policy" },
-      { text: "Terms and Conditions", href: "/terms_and_conditions" },
-      { text: "Contact Us", href: "/contact_us" },
-    ],
-  },
+  { text: "About Us", href: "/about_us" },
+  { text: "Privacy Policy", href: "/privacy_policy" },
+  { text: "Terms and Conditions", href: "/terms_and_conditions" },
+  { text: "Contact Us", href: "/contact_us" },
 ];
 
 const images = [
   {
     alt: "2xko",
-    src: "/game/icon/2xko.png",
+    src: "/game/icon/2xko.webp",
   },
   {
-    name: "Dragon Ball: Sparking Zero",
-    src: "/game/icon/dragonballsparkingzero.jpg",
+    alt: "Dragon Ball: Sparking Zero",
+    src: "/game/icon/dragonballsparkingzero.webp",
   },
   {
     alt: "Tekken 8",
-    src: "/game/icon/tekken8.jpg",
+    src: "/game/icon/tekken8.webp",
   },
   {
     alt: "Street Fighter 6",
-    src: "/game/icon/streetfighter6.jpg",
+    src: "/game/icon/streetfighter6.webp",
   },
 ];
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer bg-neutral text-neutral-content bottom-0 mx-auto max-w-6xl rounded-t-xl p-4 backdrop-blur">
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-        {links.map((linkGroup, groupIndex) => (
-          <div className="mb-6" key={groupIndex}>
-            <div className="mb-2.5 font-bold uppercase">
-              {linkGroup.section}
+    <footer className="bottom-0 mx-auto max-w-6xl rounded-t-xl p-4">
+      <div className="mb-4 flex flex-wrap items-center justify-center space-x-4">
+        <div className="flex space-x-4">
+          {links.map((link, index) => (
+            <div key={index} className="list-none">
+              <Link href={link.href}>{link.text}</Link>
             </div>
-            <ul className="mb-0 list-none">
-              {linkGroup.items.map((link, index) => (
-                <li key={index}>
-                  <a href={link.href}>{link.text}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-        <div className="col-span-2 m-auto mx-auto flex max-w-sm flex-nowrap justify-center gap-2">
+          ))}
+        </div>
+      </div>
+      <div className="gap-6">
+        <div className="m-auto mx-auto flex max-w-sm flex-nowrap justify-center gap-2">
           {images.map((image, index) => (
-            <a key={index} className="m-auto">
-              <img
+            <div
+              key={index}
+              className="m-auto transition duration-300 hover:scale-105"
+            >
+              <Image
                 className="my-auto rounded-xl object-cover"
                 src={image.src}
                 alt={image.alt}
                 width={500}
                 height={500}
               />
-            </a>
+            </div>
           ))}
         </div>
       </div>

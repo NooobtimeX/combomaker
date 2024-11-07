@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+"use client";
+
 import localFont from "next/font/local";
 import "./globals.css";
-import { GoogleTagManager } from "@next/third-parties/google";
 import Header from "@/components/section/Header";
 import Footer from "@/components/section/Footer";
+import Script from "next/script";
+import { useEffect } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,46 +18,52 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Combo Maker",
-  description: "Craft your own combos and share them with the world!",
-  keywords: ["combo", "maker", "game", "fighting", "games", "combos"],
-  openGraph: {
-    title: "Combo Maker",
-    description: "Craft your own combos and share them with the world!",
-    url: "https://combo-maker.com",
-    type: "website",
-    images: [
-      {
-        url: "https://combo-maker.com/favicon.ico",
-        width: 800,
-        height: 600,
-        alt: "Combo Maker",
-      },
-    ],
-  },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Load Google Adsense after page load to prevent blocking the main thread
+  useEffect(() => {
+    const loadAdsenseScript = () => {
+      const script = document.createElement("script");
+      script.src =
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6034794215506479";
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      document.head.appendChild(script);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("load", loadAdsenseScript);
+    }
+
+    return () => window.removeEventListener("load", loadAdsenseScript);
+  }, []);
+
   return (
     <html lang="en">
       <head>
         <meta name="google-adsense-account" content="ca-pub-6034794215506479" />
         <meta name="genre" content="game" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6034794215506479"
-          crossOrigin="anonymous"
-        ></script>
-        <GoogleTagManager gtmId="GTM-TQVQKQM9" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Google Tag Manager script loaded after page interaction */}
+        <Script
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-TQVQKQM9"
+          strategy="afterInteractive"
+        />
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TQVQKQM9');
+          `}
+        </Script>
         <Header />
         <main>{children}</main>
         <Footer />

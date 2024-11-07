@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { FaTrash, FaUndo, FaRedo, FaSave } from "react-icons/fa";
 import { ComboDisplayProps, GameItem } from "@/interface/interface";
+import Image from "next/image";
 
 const ComboDisplay: React.FC<ComboDisplayProps> = ({
   userCreation,
@@ -127,9 +128,11 @@ const ComboDisplay: React.FC<ComboDisplayProps> = ({
                     className="aspect-w-1 aspect-h-1 group relative"
                     key={`${id}-${index}`}
                   >
-                    <img
+                    <Image
                       src={item.img}
                       alt={item.name}
+                      width={200}
+                      height={200}
                       data-dynamic
                       className="h-full max-h-5 w-full rounded-lg object-cover sm:max-h-6 md:max-h-7 lg:max-h-8 xl:max-h-9 2xl:max-h-10"
                     />
@@ -162,7 +165,7 @@ const ComboDisplay: React.FC<ComboDisplayProps> = ({
             {category.items.map((item: GameItem) => (
               <div key={item.id} className="group relative">
                 <div className="aspect-w-1 aspect-h-1">
-                  <img
+                  <Image
                     onClick={() =>
                       handleAddItem(
                         item,
@@ -175,6 +178,8 @@ const ComboDisplay: React.FC<ComboDisplayProps> = ({
                     }
                     src={item.img}
                     alt={item.name}
+                    height={200}
+                    width={200}
                     data-dynamic
                     className="h-full max-h-7 w-full cursor-pointer rounded-lg object-cover duration-300 sm:max-h-8 md:max-h-9 md:hover:brightness-50 lg:max-h-10 xl:max-h-11 2xl:max-h-12"
                   />

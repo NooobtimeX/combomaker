@@ -1,7 +1,7 @@
 const projectl = {
   id: "2xko",
   name: "2XKO",
-  img: "/game/icon/2xko.png",
+  img: "/game/icon/2xko.webp",
   items: [
     {
       name: "Directional",

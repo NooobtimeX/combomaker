@@ -7,6 +7,7 @@ import ImageQualitySelector from "@/components/PhotoConfiguration/ImageQualitySe
 import PlayerOrientationSelector from "@/components/PhotoConfiguration/PlayerOrientationSelector";
 import BackgroundColorSelector from "@/components/PhotoConfiguration/BackgroundColorSelector";
 import FileFormatSelector from "@/components/PhotoConfiguration/FileFormatSelector";
+import Image from "next/image";
 
 const PhotoConfigurationModal: React.FC<PhotoConfigurationModalProps> = ({
   isOpen,
@@ -48,7 +49,7 @@ const PhotoConfigurationModal: React.FC<PhotoConfigurationModalProps> = ({
             className="flex gap-2 rounded-lg bg-opacity-80 p-3"
           >
             {["f", "natural", "d", "df", "2"].map((img, index) => (
-              <img
+              <Image
                 key={index}
                 src={`/tekken8/${
                   shouldSwapHorizontal
@@ -57,6 +58,8 @@ const PhotoConfigurationModal: React.FC<PhotoConfigurationModalProps> = ({
                 }.webp`}
                 alt="Example"
                 className="aspect-square h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 2xl:h-10"
+                width={50}
+                height={50}
               />
             ))}
           </div>

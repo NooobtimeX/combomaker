@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us | Combo Maker",
@@ -24,13 +25,13 @@ export const metadata: Metadata = {
 
 const AboutUs: React.FC = () => {
   const images = [
-    { src: "/game/icon/tekken8.jpg", alt: "Tekken 8" },
-    { src: "/game/icon/2xko.png", alt: "2xko" },
+    { src: "/game/icon/tekken8.webp", alt: "Tekken 8" },
+    { src: "/game/icon/2xko.webp", alt: "2xko" },
     {
-      src: "/game/icon/dragonballsparkingzero.jpg",
+      src: "/game/icon/dragonballsparkingzero.webp",
       alt: "dragonball sparking zero",
     },
-    { src: "/game/icon/streetfighter6.jpg", alt: "street fighter 6" },
+    { src: "/game/icon/streetfighter6.webp", alt: "street fighter 6" },
   ];
 
   const statistics = [
@@ -47,7 +48,7 @@ const AboutUs: React.FC = () => {
         <div className="grid w-full grid-cols-1 items-center justify-start gap-12 lg:grid-cols-2">
           <div className="order-last grid w-full grid-cols-2 items-start justify-center gap-6 sm:grid-cols-2 lg:order-first">
             {images.map((image, index) => (
-              <img
+              <Image
                 key={index}
                 className="rounded-xl object-cover"
                 src={image.src}
