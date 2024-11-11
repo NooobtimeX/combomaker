@@ -82,14 +82,12 @@ export const handleRedo = (
   }
 };
 
-export const handleSaveAsPNG = (
+const renderImagesToCanvas = async (
   shouldSwapHorizontal: boolean,
   imgHeight: number,
   userCreation: number[],
-  comboName: string,
   movesForGame: any[],
   bgColor: string | null,
-  fileFormat: string,
 ) => {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
@@ -100,6 +98,7 @@ export const handleSaveAsPNG = (
         .find((move) => move.id === id),
     )
     .filter(Boolean);
+
   const spacing = 10;
   let totalWidth = 0;
   const images = selectedMoves.map((item: any) => {
@@ -119,36 +118,109 @@ export const handleSaveAsPNG = (
       }
     });
   });
-  Promise.all(images).then((loadedImages) => {
-    const totalHeight = imgHeight;
+
+  await Promise.all(images).then((loadedImages) => {
     canvas.width = totalWidth - spacing;
-    canvas.height = totalHeight;
-    if (context) {
-      if (bgColor) {
-        context.fillStyle = bgColor;
-        context.fillRect(0, 0, canvas.width, canvas.height);
-      }
-      let currentX = 0;
-      loadedImages.forEach(({ img, imgWidth, isSwapHorizontal }) => {
-        context.save();
-        context.beginPath();
-        context.rect(currentX, 0, imgWidth, imgHeight);
-        context.clip();
-        if (shouldSwapHorizontal && isSwapHorizontal) {
-          context.scale(-1, 1);
-          context.drawImage(img, -currentX - imgWidth, 0, imgWidth, imgHeight);
-          context.scale(-1, 1);
-        } else {
-          context.drawImage(img, currentX, 0, imgWidth, imgHeight);
-        }
-        context.restore();
-        currentX += imgWidth + spacing;
-      });
+    canvas.height = imgHeight;
+    if (context && bgColor) {
+      context.fillStyle = bgColor;
+      context.fillRect(0, 0, canvas.width, canvas.height);
     }
-    const dataUrl = canvas.toDataURL(`image/${fileFormat}`);
+    let currentX = 0;
+    loadedImages.forEach(({ img, imgWidth, isSwapHorizontal }) => {
+      context?.save();
+      context?.beginPath();
+      context?.rect(currentX, 0, imgWidth, imgHeight);
+      context?.clip();
+      if (shouldSwapHorizontal && isSwapHorizontal) {
+        context?.scale(-1, 1);
+        context?.drawImage(img, -currentX - imgWidth, 0, imgWidth, imgHeight);
+        context?.scale(-1, 1);
+      } else {
+        context?.drawImage(img, currentX, 0, imgWidth, imgHeight);
+      }
+      context?.restore();
+      currentX += imgWidth + spacing;
+    });
+  });
+
+  return canvas;
+};
+
+export const handleSaveAsPNG = async (
+  shouldSwapHorizontal: boolean,
+  imgHeight: number,
+  userCreation: number[],
+  comboName: string,
+  movesForGame: any[],
+  bgColor: string | null,
+  fileFormat: string,
+) => {
+  const canvas = await renderImagesToCanvas(
+    shouldSwapHorizontal,
+    imgHeight,
+    userCreation,
+    movesForGame,
+    bgColor,
+  );
+  const dataUrl = canvas.toDataURL(`image/${fileFormat}`);
+  const link = document.createElement("a");
+  link.href = dataUrl;
+  link.download = `${comboName || "combo"}.${fileFormat}`;
+  link.click();
+};
+
+export const handleSaveAsSequence = async (
+  shouldSwapHorizontal: boolean,
+  imgHeight: number,
+  userCreation: number[],
+  comboName: string,
+  movesForGame: any[],
+  bgColor: string | null,
+  fileFormat: string,
+) => {
+  // Calculate the full width for the final combo
+  const fullWidthCanvas = await renderImagesToCanvas(
+    shouldSwapHorizontal,
+    imgHeight,
+    userCreation,
+    movesForGame,
+    bgColor,
+  );
+  const fullWidth = fullWidthCanvas.width; // Full width for each sequence image
+
+  for (let i = 0; i < userCreation.length; i++) {
+    const partialCreation = userCreation.slice(0, i + 1);
+
+    // Render the partial sequence image with the full width
+    const canvas = await renderImagesToCanvas(
+      shouldSwapHorizontal,
+      imgHeight,
+      partialCreation,
+      movesForGame,
+      bgColor,
+    );
+    const context = canvas.getContext("2d");
+    const tempCanvas = document.createElement("canvas");
+    const tempContext = tempCanvas.getContext("2d");
+
+    tempCanvas.width = fullWidth;
+    tempCanvas.height = imgHeight;
+
+    if (tempContext && bgColor) {
+      tempContext.fillStyle = bgColor;
+      tempContext.fillRect(0, 0, fullWidth, imgHeight);
+    }
+
+    // Draw partial canvas content aligned to the left of the full width canvas
+    if (tempContext) {
+      tempContext.drawImage(canvas, 0, 0);
+    }
+
+    const dataUrl = tempCanvas.toDataURL(`image/${fileFormat}`);
     const link = document.createElement("a");
     link.href = dataUrl;
-    link.download = `${comboName || "combo"}.${fileFormat}`;
+    link.download = `${comboName || "combo"}_${i + 1}.${fileFormat}`;
     link.click();
-  });
+  }
 };

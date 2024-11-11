@@ -46,6 +46,15 @@ export interface PhotoConfigurationModalProps {
     bgColor: string,
     fileFormat: string,
   ) => void;
+  handleSaveAsSequence: (
+    shouldSwapHorizontal: boolean,
+    imgHeight: number,
+    userCreation: number[],
+    comboName: string,
+    movesForGame: GameCategory[],
+    bgColor: string,
+    fileFormat: string,
+  ) => void; // Added this line
   userCreation: number[];
   movesForGame: GameCategory[];
 }
