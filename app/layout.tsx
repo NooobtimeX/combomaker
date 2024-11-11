@@ -1,22 +1,10 @@
 "use client";
 
-import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/section/Header";
 import Footer from "@/components/section/Footer";
 import Script from "next/script";
 import { useEffect } from "react";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export default function RootLayout({
   children,
@@ -47,9 +35,7 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-6034794215506479" />
         <meta name="genre" content="game" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         {/* Google Tag Manager script loaded after page interaction */}
         <Script
           src="https://www.googletagmanager.com/gtm.js?id=GTM-TQVQKQM9"
