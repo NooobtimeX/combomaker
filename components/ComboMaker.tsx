@@ -8,6 +8,7 @@ import {
   handleUndo,
   handleRedo,
   handleSaveAsPNG,
+  handleSaveAsSequence,
 } from "@/utils/logics";
 import { games } from "@/data/games";
 import PhotoConfigurationModal from "@/components/PhotoConfigurationModal";
@@ -19,7 +20,7 @@ const ComboMaker: React.FC<ComboMakerProps> = ({ gameId }) => {
   const [redoStack, setRedoStack] = useState<number[][]>([]);
   const [comboName, setComboName] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [imgHeight, setImgHeight] = useState(500);
+  const [imgHeight, setImgHeight] = useState(600);
   const [shouldSwapHorizontal, setShouldSwapHorizontal] = useState(false);
   const [color, setColor] = useState({ r: 0, g: 0, b: 0, a: 0 });
 
@@ -63,6 +64,7 @@ const ComboMaker: React.FC<ComboMakerProps> = ({ gameId }) => {
             setColor={setColor}
             hasSwapHorizontal={hasSwapHorizontal}
             handleSaveAsPNG={handleSaveAsPNG}
+            handleSaveAsSequence={handleSaveAsSequence} // Add this line
             userCreation={userCreation}
             movesForGame={movesForGame}
           />
