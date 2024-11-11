@@ -1,3 +1,5 @@
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 import { Item } from "@/interface/interface";
 
 export const getSavedState = (key: string) => {
@@ -179,7 +181,11 @@ export const handleSaveAsSequence = async (
   bgColor: string | null,
   fileFormat: string,
 ) => {
-  // Calculate the full width for the final combo
+  const zip = new JSZip();
+  const folder = zip.folder(comboName || "combo");
+
+  if (!folder) return;
+
   const fullWidthCanvas = await renderImagesToCanvas(
     shouldSwapHorizontal,
     imgHeight,
@@ -187,12 +193,10 @@ export const handleSaveAsSequence = async (
     movesForGame,
     bgColor,
   );
-  const fullWidth = fullWidthCanvas.width; // Full width for each sequence image
+  const fullWidth = fullWidthCanvas.width;
 
   for (let i = 0; i < userCreation.length; i++) {
     const partialCreation = userCreation.slice(0, i + 1);
-
-    // Render the partial sequence image with the full width
     const canvas = await renderImagesToCanvas(
       shouldSwapHorizontal,
       imgHeight,
@@ -200,10 +204,9 @@ export const handleSaveAsSequence = async (
       movesForGame,
       bgColor,
     );
-    const context = canvas.getContext("2d");
+
     const tempCanvas = document.createElement("canvas");
     const tempContext = tempCanvas.getContext("2d");
-
     tempCanvas.width = fullWidth;
     tempCanvas.height = imgHeight;
 
@@ -212,15 +215,16 @@ export const handleSaveAsSequence = async (
       tempContext.fillRect(0, 0, fullWidth, imgHeight);
     }
 
-    // Draw partial canvas content aligned to the left of the full width canvas
     if (tempContext) {
       tempContext.drawImage(canvas, 0, 0);
     }
 
     const dataUrl = tempCanvas.toDataURL(`image/${fileFormat}`);
-    const link = document.createElement("a");
-    link.href = dataUrl;
-    link.download = `${comboName || "combo"}_${i + 1}.${fileFormat}`;
-    link.click();
+    const blob = await (await fetch(dataUrl)).blob();
+    folder.file(`${comboName || "combo"}_${i + 1}.${fileFormat}`, blob);
   }
+
+  zip.generateAsync({ type: "blob" }).then((content) => {
+    saveAs(content, `${comboName || "combo"}.zip`);
+  });
 };
