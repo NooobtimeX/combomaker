@@ -39,7 +39,7 @@ export async function generateMetadata(props: {
     : params.gameId;
   const game = getGameById(gameId);
   const title = `${game.name} Combo Maker | combomaker.net`;
-  const description = `${game.name} Combo Maker is a web application that allows players to create, customize, and experiment with their own combos and share with others.`;
+  const description = `${game.name} Combo Maker is a web application that allows players to create, customize, and experiment with their own combos and share them with others.`;
   const url = `https://combomaker.net/${game.id}`;
   const imageUrl = `https://combomaker.net${game.img}`;
   const imageAlt = `${game.name} Combo Maker`;
@@ -47,7 +47,7 @@ export async function generateMetadata(props: {
   return {
     title,
     description,
-    keywords: `${game.name} combo maker,${game.name},combo maker,create combo`, // Add button names as keywords
+    keywords: `${game.name} combo maker,${game.name},combo maker,create combo`,
     openGraph: {
       title,
       description,
@@ -70,9 +70,6 @@ export default async function Layout(props: {
   params: Promise<{ gameId: string }>;
 }) {
   const params = await props.params;
-
-  const { children } = props;
-
   const gameId = Array.isArray(params.gameId)
     ? params.gameId[0]
     : params.gameId;
@@ -83,11 +80,11 @@ export default async function Layout(props: {
       <h1 className="mb-4 text-center text-2xl font-bold">
         {game.name} Combo Maker
       </h1>
-      {children}
+      {props.children}
       <p className="mx-auto max-w-2xl">
         {game.name} Combo Maker is a web application that allows players to
-        create, customize, and experiment with their own combo and share with
-        others.
+        create, customize, and experiment with their own combos and share them
+        with others.
       </p>
     </div>
   );

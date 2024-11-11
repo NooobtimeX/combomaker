@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -20,10 +20,9 @@ const config: Config = {
         "22": "repeat(22, minmax(0, 1fr))",
       },
       screens: {
-        "3xl": "1600px", // Adds a 3xl breakpoint
+        "3xl": "1600px",
       },
     },
   },
   plugins: [],
-};
-export default config;
+} satisfies Config;

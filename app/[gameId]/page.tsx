@@ -1,8 +1,12 @@
 "use client";
+import { use } from "react";
 import ComboMaker from "@/components/ComboMaker";
 
-export default function GamePage(props: { params: { gameId: string } }) {
-  const { gameId } = props.params;
+type Params = Promise<{ gameId: string }>;
+
+export default function GamePage(props: { params: Params }) {
+  const params = use(props.params);
+  const { gameId } = params;
 
   return (
     <div>
