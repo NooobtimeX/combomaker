@@ -1,9 +1,8 @@
 import Features from "@/components/Features";
 import Stat from "@/components/Stat";
 import DisplayGames from "@/components/section/DisplayGames";
+import HeroSection from "@/components/section/HeroSection";
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 
 const games = [
   {
@@ -50,36 +49,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <link rel="canonical" href="https://combomaker.net/" />
-      <div className="mb-10 mt-2 rounded-xl text-white">
-        <div className="relative isolate px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl py-6">
-            <div className="text-center">
-              <h1 className="text-5xl font-bold text-red-600">Combo Maker!</h1>
-              <Image
-                src={"/combo.webp"}
-                alt="combomaker.net"
-                width={300}
-                height={300}
-                className="mx-auto py-2"
-                priority
-              />
-              <p className="m-2 text-lg leading-8">
-                Craft your own <span className="text-red-500">combos</span> and
-                share them with the world!
-              </p>
-              <Link href="/game">
-                <button className="border border-red-500 text-red-500 transition duration-200 hover:bg-red-500 hover:text-white">
-                  See all game
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h2 className="text-center text-red-500">Popular Game</h2>
-        <DisplayGames games={games} />
-      </div>
+      <HeroSection />
+      <DisplayGames games={games} />
       <div>
         <Features />
       </div>
