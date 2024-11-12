@@ -1,6 +1,7 @@
 import React from "react";
-import { FaLinkedin, FaYoutube, FaGlobe } from "react-icons/fa"; // Import FaGlobe for website icon
-import type { Metadata } from "next"; // Import Metadata type
+import { FaGlobe, FaLinkedin, FaYoutube } from "react-icons/fa";
+
+import type { Metadata } from "next";
 import Link from "next/link";
 
 // Define metadata for the ContactUs page

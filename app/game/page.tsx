@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import DisplayGames from "@/components/section/DisplayGames";
 import { games } from "@/data/games";
 

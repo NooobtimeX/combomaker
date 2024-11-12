@@ -1,4 +1,3 @@
-// PlayerOrientationSelector.tsx
 import React from "react";
 
 interface PlayerOrientationSelectorProps {

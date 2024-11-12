@@ -1,5 +1,6 @@
 import React from "react";
-import type { Metadata } from "next"; // Import Metadata type
+
+import type { Metadata } from "next";
 
 // Define metadata for the ContactUs page
 export const metadata: Metadata = {

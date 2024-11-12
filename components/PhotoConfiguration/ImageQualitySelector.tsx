@@ -1,4 +1,3 @@
-// ImageQualitySelector.tsx
 import React from "react";
 
 interface ImageQualitySelectorProps {

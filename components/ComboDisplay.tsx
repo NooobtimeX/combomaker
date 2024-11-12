@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { FaRedo, FaSave, FaTrash, FaUndo } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
-import { FaTrash, FaUndo, FaRedo, FaSave } from "react-icons/fa";
+
 import { ComboDisplayProps, GameItem } from "@/interface/interface";
 import Image from "next/image";
 

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import { PhotoConfigurationModalProps } from "@/interface/interface";
+
+import BackgroundColorSelector from "@/components/PhotoConfiguration/BackgroundColorSelector";
 import ComboNameInput from "@/components/PhotoConfiguration/ComboNameInput.tsx";
+import FileFormatSelector from "@/components/PhotoConfiguration/FileFormatSelector";
 import ImageQualitySelector from "@/components/PhotoConfiguration/ImageQualitySelector";
 import PlayerOrientationSelector from "@/components/PhotoConfiguration/PlayerOrientationSelector";
-import BackgroundColorSelector from "@/components/PhotoConfiguration/BackgroundColorSelector";
-import FileFormatSelector from "@/components/PhotoConfiguration/FileFormatSelector";
 import SaveComboButtonSelector from "@/components/PhotoConfiguration/SaveComboButtonSelector";
+import { PhotoConfigurationModalProps } from "@/interface/interface";
 
 const PhotoConfigurationModal: React.FC<PhotoConfigurationModalProps> = ({
   isOpen,

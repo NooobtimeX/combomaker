@@ -1,10 +1,12 @@
 "use client";
 
-import "./globals.css";
-import Header from "@/components/section/Header";
-import Footer from "@/components/section/Footer";
-import Script from "next/script";
 import { useEffect } from "react";
+
+import Footer from "@/components/section/Footer";
+import Header from "@/components/section/Header";
+import Script from "next/script";
+
+import "./globals.css";
 
 export default function RootLayout({
   children,

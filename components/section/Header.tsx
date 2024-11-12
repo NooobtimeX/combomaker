@@ -1,8 +1,11 @@
 "use client";
+
 import { useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
-import Link from "next/link";
+
 import Image from "next/image";
+import Link from "next/link";
+
 const navigation = [
   { name: "HOME", href: "/" },
   { name: "COMBO MAKER", href: "/game" },

@@ -1,7 +1,7 @@
 import React from "react";
-import type { Metadata } from "next"; // Import Metadata type
 
-// Define metadata for the ContactUs page
+import type { Metadata } from "next";
+
 export const metadata: Metadata = {
   title: "Privacy Policy | Combo Maker",
   description:

@@ -1,4 +1,3 @@
-// BackgroundColorSelector.tsx
 import React from "react";
 
 interface BackgroundColorSelectorProps {

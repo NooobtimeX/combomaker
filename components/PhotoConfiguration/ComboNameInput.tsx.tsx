@@ -1,4 +1,3 @@
-// ComboNameInput.tsx
 import React from "react";
 
 interface ComboNameInputProps {

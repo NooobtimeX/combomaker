@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation";
-import { games } from "@/data/games"; // Adjust the import path as necessary
+import { games } from "@/data/games";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 type GameItem = {
   id: number;

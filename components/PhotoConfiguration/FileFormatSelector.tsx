@@ -1,4 +1,3 @@
-// FileFormatSelector.tsx
 import React from "react";
 
 interface FileFormatSelectorProps {

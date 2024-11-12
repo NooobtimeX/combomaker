@@ -1,5 +1,5 @@
-import type { MetadataRoute } from "next";
 import { games } from "@/data/games";
+import type { MetadataRoute } from "next";
 
 const domain = "https://combomaker.net";
 

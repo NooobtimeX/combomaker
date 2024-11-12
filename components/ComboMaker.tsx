@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
+import ComboDisplay from "@/components/ComboDisplay";
+import PhotoConfigurationModal from "@/components/PhotoConfigurationModal";
+import { games } from "@/data/games";
+import { ComboMakerProps } from "@/interface/interface";
 import {
   getSavedState,
-  saveState,
   handleAddItem,
   handleDeleteLast,
-  handleReset,
-  handleUndo,
   handleRedo,
+  handleReset,
   handleSaveAsPNG,
   handleSaveAsSequence,
+  handleUndo,
+  saveState,
 } from "@/utils/logics";
-import { games } from "@/data/games";
-import PhotoConfigurationModal from "@/components/PhotoConfigurationModal";
-import ComboDisplay from "@/components/ComboDisplay";
-import { ComboMakerProps } from "@/interface/interface";
+
 const ComboMaker: React.FC<ComboMakerProps> = ({ gameId }) => {
   const [userCreation, setUserCreation] = useState<number[]>([]);
   const [undoStack, setUndoStack] = useState<number[][]>([]);
