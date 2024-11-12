@@ -15,19 +15,19 @@ const links = [
 const images = [
   {
     alt: "2xko",
-    src: "/game/icon/2xko.webp",
+    src: "/footer/icon/2xko.webp",
   },
   {
     alt: "Dragon Ball: Sparking Zero",
-    src: "/game/icon/dragonballsparkingzero.webp",
+    src: "/footer/icon/dragonballsparkingzero.webp",
   },
   {
     alt: "Tekken 8",
-    src: "/game/icon/tekken8.webp",
+    src: "/footer/icon/tekken8.webp",
   },
   {
     alt: "Street Fighter 6",
-    src: "/game/icon/streetfighter6.webp",
+    src: "/footer/icon/streetfighter6.webp",
   },
 ];
 

@@ -6,15 +6,15 @@ const tekken8 = {
     {
       name: "Directional",
       items: [
-        { name: "natural", img: "/street_figther_6/n.svg" },
-        { name: "b", img: "/tekken8/b.webp", isSwapHorizontal: true },
-        { name: "db", img: "/tekken8/db.webp", isSwapHorizontal: true },
-        { name: "d", img: "/tekken8/d.webp" },
-        { name: "df", img: "/tekken8/df.webp", isSwapHorizontal: true },
-        { name: "f", img: "/tekken8/f.webp", isSwapHorizontal: true },
-        { name: "uf", img: "/tekken8/uf.webp", isSwapHorizontal: true },
-        { name: "u", img: "/tekken8/u.webp" },
-        { name: "ub", img: "/tekken8/ub.webp", isSwapHorizontal: true },
+        { name: "natural", img: "/game/street_figther_6/n.svg" },
+        { name: "b", img: "/game/tekken8/b.webp", isSwapHorizontal: true },
+        { name: "db", img: "/game/tekken8/db.webp", isSwapHorizontal: true },
+        { name: "d", img: "/game/tekken8/d.webp" },
+        { name: "df", img: "/game/tekken8/df.webp", isSwapHorizontal: true },
+        { name: "f", img: "/game/tekken8/f.webp", isSwapHorizontal: true },
+        { name: "uf", img: "/game/tekken8/uf.webp", isSwapHorizontal: true },
+        { name: "u", img: "/game/tekken8/u.webp" },
+        { name: "ub", img: "/game/tekken8/ub.webp", isSwapHorizontal: true },
       ],
     },
     {
@@ -22,43 +22,43 @@ const tekken8 = {
       items: [
         {
           name: "LP",
-          img: "/street_figther_6/LP.png",
+          img: "/game/street_figther_6/LP.webp",
         },
         {
           name: "MP",
-          img: "/street_figther_6/MP.png",
+          img: "/game/street_figther_6/MP.webp",
         },
         {
           name: "HP",
-          img: "/street_figther_6/HP.png",
+          img: "/game/street_figther_6/HP.webp",
         },
         {
           name: "LK",
-          img: "/street_figther_6/LK.png",
+          img: "/game/street_figther_6/LK.webp",
         },
         {
           name: "MK",
-          img: "/street_figther_6/MK.png",
+          img: "/game/street_figther_6/MK.webp",
         },
         {
           name: "HK",
-          img: "/street_figther_6/HK.png",
+          img: "/game/street_figther_6/HK.webp",
         },
         {
           name: "Drive Impact",
-          img: "/street_figther_6/DI.png",
+          img: "/game/street_figther_6/DI.webp",
         },
         {
           name: "Drive RUSH",
-          img: "/street_figther_6/DR.png",
+          img: "/game/street_figther_6/DR.webp",
         },
       ],
     },
     {
       name: "Special",
       items: [
-        { name: "next", img: "/tekken8/next.webp" },
-        { name: "+", img: "/2xko/button/+.png" },
+        { name: "next", img: "/game/tekken8/next.webp" },
+        { name: "+", img: "/game/2xko/button/+.webp" },
       ],
     },
   ].map((category, categoryIndex) => ({

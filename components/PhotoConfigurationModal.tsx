@@ -52,7 +52,7 @@ const PhotoConfigurationModal: React.FC<PhotoConfigurationModalProps> = ({
             {["f", "natural", "d", "df", "2"].map((img, index) => (
               <img
                 key={index}
-                src={`/tekken8/${
+                src={`/game/tekken8/${
                   shouldSwapHorizontal
                     ? ["b", "natural", "d", "db", "2"][index]
                     : img

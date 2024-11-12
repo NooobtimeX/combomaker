@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    minimumCacheTTL: 2592000,
+  },
   async redirects() {
     return [
       {
@@ -17,7 +20,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value: "public, max-age=2592000, immutable",
           },
         ],
       },
