@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const navigation = [
   { name: "HOME", href: "/" },
-  { name: "GAMES", href: "/game" },
+  { name: "GAMES", href: "/games" },
 ];
 
 export default function Header() {
