@@ -15,7 +15,8 @@ interface DisplayGamesProps {
 
 export default function DisplayGames({ games }: DisplayGamesProps) {
   return (
-    <div className="py-6">
+    <div className="py-4">
+      <h2 className="text-center text-red-500 mb-4">Popular Game</h2>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 gap-6 md:grid-cols-3 xl:grid-cols-4">
           {games.map((game, index) => (
@@ -37,9 +38,9 @@ export default function DisplayGames({ games }: DisplayGamesProps) {
                 />
               </a>
               <div className="flex flex-col items-center space-y-2">
-                <h2 className="truncate text-center text-lg font-semibold">
+                <h3 className="truncate text-center text-lg font-semibold">
                   {game.name}
-                </h2>
+                </h3>
                 <div className="mx-auto flex w-full justify-center pb-2">
                   <Link href={game.id}>
                     <button className="border border-red-500 text-red-500 transition duration-200 hover:bg-red-500 hover:text-white">

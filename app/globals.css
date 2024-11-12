@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  @apply text-lg text-white;
+  @apply text-base text-white xl:text-lg;
 }
 body {
   @apply bg-gray-900;
@@ -14,17 +14,14 @@ option {
   @apply text-gray-900;
 }
 h1 {
-  @apply text-4xl;
+  @apply text-3xl lg:text-4xl;
 }
 h2 {
-  @apply text-3xl;
+  @apply text-2xl lg:text-3xl;
 }
 h3 {
-  @apply text-2xl;
-}
-h4 {
-  @apply text-xl;
+  @apply text-xl lg:text-2xl;
 }
 button {
-  @apply rounded-xl px-4 py-2 text-sm font-bold;
+  @apply rounded-xl px-4 py-2 text-xs font-bold lg:text-sm;
 }

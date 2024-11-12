@@ -5,7 +5,7 @@ import { useState } from "react";
 import DisplayGames from "@/components/section/DisplayGames";
 import { games } from "@/data/games";
 
-const GAMES_PER_PAGE = 8;
+const GAMES_PER_PAGE = 16;
 
 export default function HomePage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -76,7 +76,7 @@ export default function HomePage() {
             value={searchTerm}
             onChange={handleSearchChange}
             placeholder="Search games..."
-            className="w-full max-w-md rounded-2xl border border-gray-700 bg-transparent px-4 py-2"
+            className="w-full max-w-md rounded-xl border border-gray-700 bg-transparent px-4 py-2"
           />
         </div>
 
@@ -88,10 +88,10 @@ export default function HomePage() {
             <button
               onClick={handlePreviousPage}
               disabled={currentPage === 1}
-              className={`rounded px-3 py-1 ${
+              className={`rounded-xl px-3 py-1 ${
                 currentPage === 1
                   ? "cursor-not-allowed text-gray-400"
-                  : "text-blue-600"
+                  : "text-red-600"
               }`}
             >
               &lt;
@@ -107,10 +107,10 @@ export default function HomePage() {
                 <button
                   key={index}
                   onClick={() => handlePageClick(page as number)}
-                  className={`rounded px-3 py-1 ${
+                  className={`rounded-xl px-3 py-1 ${
                     currentPage === page
-                      ? "bg-blue-600 text-white"
-                      : "text-blue-600"
+                      ? "bg-red-600 text-white"
+                      : "text-red-600"
                   }`}
                 >
                   {page}
@@ -121,10 +121,10 @@ export default function HomePage() {
             <button
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
-              className={`rounded px-3 py-1 ${
+              className={`rounded-xl px-3 py-1 ${
                 currentPage === totalPages
                   ? "cursor-not-allowed text-gray-400"
-                  : "text-blue-600"
+                  : "text-red-600"
               }`}
             >
               &gt;

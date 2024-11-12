@@ -32,7 +32,7 @@ const PhotoConfigurationModal: React.FC<PhotoConfigurationModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 p-2">
-      <div className="relative w-full max-w-lg space-y-3 rounded-lg bg-gray-900 px-4 py-6 shadow-lg">
+      <div className="relative w-full max-w-lg space-y-3 rounded-xl bg-gray-900 p-4 shadow-lg">
         <button
           onClick={onClose}
           className="absolute right-4 top-4 text-gray-400 transition-colors hover:text-white"
@@ -47,7 +47,7 @@ const PhotoConfigurationModal: React.FC<PhotoConfigurationModalProps> = ({
             style={{
               backgroundColor: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
             }}
-            className="flex gap-2 rounded-lg bg-opacity-80 p-1"
+            className="flex gap-2 rounded-xl bg-opacity-80 p-1"
           >
             {["f", "natural", "d", "df", "2"].map((img, index) => (
               <img

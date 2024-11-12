@@ -15,7 +15,7 @@ const ComboNameInput: React.FC<ComboNameInputProps> = ({
       type="text"
       value={comboName}
       onChange={(e) => setComboName(e.target.value)}
-      className="block w-full rounded-lg bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+      className="block w-full rounded-xl bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500"
       placeholder="Enter combo name"
     />
   </div>

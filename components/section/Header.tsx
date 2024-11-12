@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const navigation = [
   { name: "HOME", href: "/" },
-  { name: "COMBO MAKER", href: "/game" },
+  { name: "GAMES", href: "/game" },
 ];
 
 export default function Header() {
@@ -18,14 +18,14 @@ export default function Header() {
     setMobileMenuOpen((prev) => !prev);
   };
   return (
-    <nav className="bg-background/75 sticky top-0 z-40 mb-1 rounded-b-xl shadow-xl backdrop-blur">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <nav className="bg-background/75 sticky top-0 z-40 mb-1 rounded-b-2xl shadow-xl backdrop-blur">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile menu button */}
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             <button
               onClick={handleMenuToggle}
-              className="bg-800 inline-flex items-center justify-center p-2 text-white focus:outline-none focus:ring-2 focus:ring-inset"
+              className=" inline-flex items-center justify-center p-2 text-white focus:outline-none focus:ring-2 focus:ring-red-500  focus:ring-inset"
             >
               <span className="sr-only">Open main menu</span>
               {isMobileMenuOpen ? (
@@ -35,9 +35,9 @@ export default function Header() {
               )}
             </button>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex-shrink-0">
-              <Link href="/">
+          <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
+            <div className="flex-shrink-0 flex">
+              <Link href="/" className="m-auto">
                 <Image
                   src="/favicon.ico"
                   className="w-9"
@@ -47,19 +47,22 @@ export default function Header() {
                 />
               </Link>
             </div>
+            <Link href="/" className="hidden md:flex items-center">
+              <h2>combo maker</h2>
+            </Link>
           </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
             <div className="relative">
-              <div className="hidden sm:ml-6 sm:block">
+              <div className="hidden md:ml-6 md:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:text-red-600"
+                      className="rounded-xl px-3 py-2 text-sm font-medium text-gray-300 hover:text-red-600"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -68,16 +71,16 @@ export default function Header() {
         </div>
       </div>
       {isMobileMenuOpen && (
-        <div className="absolute z-50 w-full rounded-xl bg-gray-900 p-2 sm:hidden">
+        <div className="absolute z-50 w-full rounded-xl bg-gray-900 p-2 md:hidden rounded-b-xl">
           <div className="space-y-1 px-2 pb-3 pt-2">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-red-600"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

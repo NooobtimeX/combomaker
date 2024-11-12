@@ -11,10 +11,10 @@ const ImageQualitySelector: React.FC<ImageQualitySelectorProps> = ({
 }) => (
   <label className="block text-white">
     <span className="mb-2 font-medium">Image Quality</span>
-    <div className="flex gap-3">
+    <div className="flex gap-2">
       <button
         onClick={() => setImgHeight(100)}
-        className={`w-full rounded-lg py-2 font-medium transition-colors ${
+        className={`w-full rounded-xl py-2 font-medium transition-colors ${
           imgHeight === 100
             ? "bg-green-500 text-white"
             : "border border-green-500 text-green-500"
@@ -24,7 +24,7 @@ const ImageQualitySelector: React.FC<ImageQualitySelectorProps> = ({
       </button>
       <button
         onClick={() => setImgHeight(200)}
-        className={`w-full rounded-lg py-2 font-medium transition-colors ${
+        className={`w-full rounded-xl py-2 font-medium transition-colors ${
           imgHeight === 200
             ? "bg-lime-500 text-white"
             : "border border-lime-500 text-lime-500"
@@ -34,7 +34,7 @@ const ImageQualitySelector: React.FC<ImageQualitySelectorProps> = ({
       </button>
       <button
         onClick={() => setImgHeight(300)}
-        className={`w-full rounded-lg py-2 font-medium transition-colors ${
+        className={`w-full rounded-xl py-2 font-medium transition-colors ${
           imgHeight === 300
             ? "bg-yellow-500 text-white"
             : "border border-yellow-500 text-yellow-500"
@@ -44,7 +44,7 @@ const ImageQualitySelector: React.FC<ImageQualitySelectorProps> = ({
       </button>
       <button
         onClick={() => setImgHeight(400)}
-        className={`w-full rounded-lg py-2 font-medium transition-colors ${
+        className={`w-full rounded-xl py-2 font-medium transition-colors ${
           imgHeight === 400
             ? "bg-orange-500 text-white"
             : "border border-orange-500 text-orange-500"
@@ -54,7 +54,7 @@ const ImageQualitySelector: React.FC<ImageQualitySelectorProps> = ({
       </button>
       <button
         onClick={() => setImgHeight(500)}
-        className={`w-full rounded-lg py-2 font-medium transition-colors ${
+        className={`w-full rounded-xl py-2 font-medium transition-colors ${
           imgHeight === 500
             ? "bg-red-500 text-white"
             : "border border-red-500 text-red-500"
