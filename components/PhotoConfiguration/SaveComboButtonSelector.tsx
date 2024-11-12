@@ -9,8 +9,7 @@ const SaveComboButtonSelector: React.FC<SaveComboButtonSelectorProps> = ({
   onSaveFullCombo,
   onSaveAsSequence,
 }) => (
-  <label className="block text-white">
-    <span className="mb-2 font-medium">Save Options</span>
+  <div className="block text-white">
     <div className="flex gap-3">
       <button
         onClick={onSaveFullCombo}
@@ -20,12 +19,12 @@ const SaveComboButtonSelector: React.FC<SaveComboButtonSelectorProps> = ({
       </button>
       <button
         onClick={onSaveAsSequence}
-        className="w-full rounded-lg bg-blue-500 py-3 font-medium text-white transition-colors hover:bg-blue-600"
+        className="w-full rounded-lg bg-green-500 py-3 font-medium text-white transition-colors hover:bg-green-600"
       >
         Save as Sequence
       </button>
     </div>
-  </label>
+  </div>
 );
 
 export default SaveComboButtonSelector;

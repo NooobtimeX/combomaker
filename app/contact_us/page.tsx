@@ -46,11 +46,11 @@ const ContactUs = () => {
             <span>YouTube</span>
           </Link>
           <Link
-            href="/"
+            href="https://nooobtimex.me/"
             className="flex items-center justify-center space-x-2 text-green-600 hover:underline"
           >
             <FaGlobe size={24} />
-            <span>Your Website</span>
+            <span>Website</span>
           </Link>
         </div>
       </div>

@@ -42,7 +42,7 @@ export default function DisplayGames({ games }: DisplayGamesProps) {
                 </h2>
                 <div className="mx-auto flex w-full justify-center pb-2">
                   <Link href={game.id}>
-                    <button className="border border-green-500 text-green-500 transition duration-200 hover:bg-green-500 hover:text-white">
+                    <button className="border border-red-500 text-red-500 transition duration-200 hover:bg-red-500 hover:text-white">
                       CREATE COMBO
                     </button>
                   </Link>

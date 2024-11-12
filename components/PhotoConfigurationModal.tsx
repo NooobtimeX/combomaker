@@ -38,7 +38,7 @@ const PhotoConfigurationModal: React.FC<PhotoConfigurationModalProps> = ({
         >
           <FaTimes size={24} />
         </button>
-        <h2 className="text-center text-lg font-semibold text-white">
+        <h2 className="text-center font-semibold text-red-500">
           Photo Configuration
         </h2>
         <div className="m-auto flex items-center justify-center">

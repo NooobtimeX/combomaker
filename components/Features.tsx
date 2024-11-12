@@ -60,23 +60,26 @@ const AboutUs: React.FC = () => {
           <div className="inline-flex w-full flex-col items-center justify-center gap-10 lg:items-start">
             <div className="flex w-full flex-col items-start justify-center gap-6">
               <div className="flex w-full flex-col items-center justify-start gap-3 lg:items-start">
-                <h2 className="font-manrope text-center text-4xl font-bold leading-normal lg:text-start">
-                  Craft Combo
+                <h2 className="font-manrope text-center text-red-500 lg:text-start">
+                  ComboMaker
                 </h2>
                 <p className="text-center text-base font-normal leading-relaxed lg:text-start">
-                  Welcome to ComboMaker, your go-to platform for creating custom
-                  fighting game combos! Our web app allows you to craft unique
-                  combos with ease, empowering both casual players and
-                  competitive gamers to explore new possibilities and improve
-                  their gameplay. With an intuitive interface and support for
-                  multiple fighting games, ComboMaker is designed to enhance
-                  your experience by giving you full control over combo
-                  creation, testing, and sharing. Whether you re a beginner or
-                  an expert, we re here to help you level up your skills and
-                  unleash your creativity.
+                  Welcome to <span className="text-red-500">ComboMaker</span>,
+                  your go-to platform for creating custom fighting game combos!
+                  Our web app allows you to craft unique combos with ease,
+                  empowering both casual players and competitive gamers to
+                  explore new possibilities and improve their gameplay. With an
+                  intuitive interface and support for multiple fighting games,{" "}
+                  <span className="text-red-500">ComboMaker</span> is designed
+                  to enhance your experience by giving you full control over
+                  combo creation, testing, and sharing. Whether you re a
+                  beginner or an expert, we re here to help you level up your
+                  skills and unleash your creativity.
                 </p>
               </div>
-              <h2 className="mx-auto -mb-2 text-center">Feature</h2>
+              <h2 className="mx-auto -mb-2 text-center text-red-500">
+                Feature
+              </h2>
               <div className="grid w-full grid-cols-2 items-center justify-center gap-5 sm:grid-cols-4 sm:gap-10 lg:justify-start">
                 {features.map((feature, index) => (
                   <div

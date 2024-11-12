@@ -10,7 +10,7 @@ const BackgroundColorSelector: React.FC<BackgroundColorSelectorProps> = ({
   color,
   setColor,
 }) => (
-  <label className="flex flex-col text-white">
+  <div className="flex flex-col text-white">
     <span className="mb-2 font-medium">Background Color</span>
     <div className="flex gap-3">
       <button
@@ -18,7 +18,7 @@ const BackgroundColorSelector: React.FC<BackgroundColorSelectorProps> = ({
         className={`h-10 w-1/3 rounded-lg transition-colors ${
           `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})` ===
           "rgba(0, 0, 0, 0)"
-            ? "border-2 border-green-500"
+            ? "border-2 border-red-500"
             : "border border-transparent"
         }`}
         style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
@@ -28,7 +28,7 @@ const BackgroundColorSelector: React.FC<BackgroundColorSelectorProps> = ({
         className={`h-10 w-1/3 rounded-lg transition-colors ${
           `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})` ===
           "rgba(0, 0, 0, 1)"
-            ? "border-2 border-green-500"
+            ? "border-2 border-red-500"
             : "border border-transparent"
         }`}
         style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}
@@ -38,13 +38,13 @@ const BackgroundColorSelector: React.FC<BackgroundColorSelectorProps> = ({
         className={`h-10 w-1/3 rounded-lg transition-colors ${
           `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})` ===
           "rgba(255, 255, 255, 1)"
-            ? "border-2 border-green-500"
+            ? "border-2 border-red-500"
             : "border border-transparent"
         }`}
         style={{ backgroundColor: "rgba(255, 255, 255, 1)" }}
       />
     </div>
-  </label>
+  </div>
 );
 
 export default BackgroundColorSelector;

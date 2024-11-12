@@ -53,7 +53,7 @@ export default function Header() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:text-green-600"
+                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:text-red-600"
                     >
                       {item.name}
                     </a>
@@ -71,7 +71,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-green-600"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-red-600"
               >
                 {item.name}
               </a>

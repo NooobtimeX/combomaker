@@ -20,7 +20,7 @@ const ComboMaker: React.FC<ComboMakerProps> = ({ gameId }) => {
   const [redoStack, setRedoStack] = useState<number[][]>([]);
   const [comboName, setComboName] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [imgHeight, setImgHeight] = useState(600);
+  const [imgHeight, setImgHeight] = useState(500);
   const [shouldSwapHorizontal, setShouldSwapHorizontal] = useState(false);
   const [color, setColor] = useState({ r: 0, g: 0, b: 0, a: 0 });
 

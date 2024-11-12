@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const links = [
   { text: "About Us", href: "/about_us" },
@@ -28,6 +31,12 @@ const images = [
 ];
 
 const Footer: React.FC = () => {
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bottom-0 mx-auto max-w-6xl rounded-t-xl p-4">
       <div className="mb-4 flex flex-wrap items-center justify-center space-x-4">
@@ -57,13 +66,13 @@ const Footer: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className="text-center text-sm text-gray-500">
-        <p>
-          © {new Date().getFullYear()}{" "}
-          <Link href="/" className="text-blue-400 hover:underline">
+      <div className="text-center text-sm">
+        <span>
+          © {year || ""}{" "}
+          <Link href="/" className="text-red-500 hover:underline">
             combomaker.net | ComboMaker!
           </Link>
-        </p>
+        </span>
       </div>
     </footer>
   );

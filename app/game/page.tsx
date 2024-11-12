@@ -66,7 +66,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       <link rel="canonical" href="https://combomaker.net/game/" />
       <div>
-        <h1 className="mb-4 text-center text-2xl">All Games</h1>
+        <h1 className="mb-4 text-center text-red-500">All Games</h1>
 
         {/* Search input */}
         <div className="mb-4 flex justify-center">

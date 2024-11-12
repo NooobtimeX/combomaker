@@ -53,9 +53,7 @@ export default function HomePage() {
         <div className="relative isolate px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-6">
             <div className="text-center">
-              <h1 className="text-5xl font-bold text-green-600">
-                Combo Maker!
-              </h1>
+              <h1 className="text-5xl font-bold text-red-600">Combo Maker!</h1>
               <Image
                 src={"/combo.webp"}
                 alt="combomaker.net"
@@ -65,10 +63,11 @@ export default function HomePage() {
                 priority
               />
               <p className="m-2 text-lg leading-8">
-                Craft your own combos and share them with the world!
+                Craft your own <span className="text-red-500">combos</span> and
+                share them with the world!
               </p>
               <Link href="/game">
-                <button className="border border-green-500 text-green-500 transition duration-200 hover:bg-green-500 hover:text-white">
+                <button className="border border-red-500 text-red-500 transition duration-200 hover:bg-red-500 hover:text-white">
                   See all game
                 </button>
               </Link>
@@ -77,7 +76,7 @@ export default function HomePage() {
         </div>
       </div>
       <div>
-        <h2 className="text-center">Popular Game</h2>
+        <h2 className="text-center text-red-500">Popular Game</h2>
         <DisplayGames games={games} />
       </div>
       <div>

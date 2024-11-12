@@ -77,7 +77,7 @@ export default async function Layout(props: {
 
   return (
     <div>
-      <h1 className="mb-4 text-center text-2xl font-bold">
+      <h1 className="mb-4 text-center font-bold text-red-500">
         {game.name} Combo Maker
       </h1>
       {props.children}

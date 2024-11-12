@@ -10,15 +10,14 @@ const FileFormatSelector: React.FC<FileFormatSelectorProps> = ({
   fileFormat,
   setFileFormat,
 }) => (
-  <label className="block text-white">
-    <span className="mb-2 font-medium">File Format</span>
+  <div className="block text-white">
     <div className="flex gap-3">
       <button
         onClick={() => setFileFormat("png")}
         className={`w-full rounded-lg py-2 font-medium transition-colors ${
           fileFormat === "png"
-            ? "bg-green-500 text-white"
-            : "border border-green-500 text-green-500"
+            ? "bg-red-500 text-white"
+            : "border border-red-500 text-red-500"
         }`}
       >
         PNG
@@ -27,8 +26,8 @@ const FileFormatSelector: React.FC<FileFormatSelectorProps> = ({
         onClick={() => setFileFormat("webp")}
         className={`w-full rounded-lg py-2 font-medium transition-colors ${
           fileFormat === "webp"
-            ? "bg-green-500 text-white"
-            : "border border-green-500 text-green-500"
+            ? "bg-red-500 text-white"
+            : "border border-red-500 text-red-500"
         }`}
       >
         WEBP
@@ -37,14 +36,14 @@ const FileFormatSelector: React.FC<FileFormatSelectorProps> = ({
         onClick={() => setFileFormat("jpg")}
         className={`w-full rounded-lg py-2 font-medium transition-colors ${
           fileFormat === "jpg"
-            ? "bg-green-500 text-white"
-            : "border border-green-500 text-green-500"
+            ? "bg-red-500 text-white"
+            : "border border-red-500 text-red-500"
         }`}
       >
         JPG
       </button>
     </div>
-  </label>
+  </div>
 );
 
 export default FileFormatSelector;

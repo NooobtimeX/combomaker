@@ -15,7 +15,7 @@ const PlayerOrientationSelector: React.FC<PlayerOrientationSelectorProps> = ({
   if (!hasSwapHorizontal) return null;
 
   return (
-    <label className="block text-white">
+    <div className="block text-white">
       <span className="mb-2 font-medium">Player Orientation</span>
       <div className="flex gap-3">
         <button
@@ -39,7 +39,7 @@ const PlayerOrientationSelector: React.FC<PlayerOrientationSelectorProps> = ({
           player 2
         </button>
       </div>
-    </label>
+    </div>
   );
 };
 
