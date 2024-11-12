@@ -1,8 +1,9 @@
+import Features from "@/components/Features";
+import Stat from "@/components/Stat";
 import DisplayGames from "@/components/section/DisplayGames";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
-import Features from "@/components/Features";
 
 const games = [
   {
@@ -81,6 +82,10 @@ export default function HomePage() {
       </div>
       <div>
         <Features />
+      </div>
+      <div>
+        <h2 className="text-center text-red-500">Fighting game community</h2>
+        <Stat />
       </div>
     </div>
   );
