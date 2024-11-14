@@ -9,8 +9,8 @@ const ImageQualitySelector: React.FC<ImageQualitySelectorProps> = ({
   imgHeight,
   setImgHeight,
 }) => (
-  <label className="block text-white">
-    <span className="mb-2 font-medium">Image Quality</span>
+  <div className="block text-white">
+    <span className="font-medium">Image Quality</span>
     <div className="flex gap-2">
       <button
         onClick={() => setImgHeight(100)}
@@ -63,7 +63,7 @@ const ImageQualitySelector: React.FC<ImageQualitySelectorProps> = ({
         5
       </button>
     </div>
-  </label>
+  </div>
 );
 
 export default ImageQualitySelector;

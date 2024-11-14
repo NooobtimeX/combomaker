@@ -9,8 +9,8 @@ const BackgroundColorSelector: React.FC<BackgroundColorSelectorProps> = ({
   color,
   setColor,
 }) => (
-  <div className="flex flex-col text-white">
-    <span className="mb-2 font-medium">Background Color</span>
+  <div className="block text-white">
+    <span className="font-medium">Background Color</span>
     <div className="flex gap-2">
       <button
         onClick={() => setColor({ r: 0, g: 0, b: 0, a: 0 })}
