@@ -65,7 +65,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <link rel="canonical" href="https://combomaker.net/game/" />
+      <link rel="canonical" href="https://combomaker.net/games/" />
       <div>
         <h1 className="mb-4 text-center text-red-500">All Games</h1>
 
