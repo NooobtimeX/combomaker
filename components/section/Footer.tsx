@@ -15,19 +15,19 @@ const links = [
 const images = [
   {
     alt: "2xko",
-    src: "/footer/icon/2xko.webp",
+    src: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2Ffooter%2F2xko.webp?alt=media",
   },
   {
     alt: "Dragon Ball: Sparking Zero",
-    src: "/footer/icon/dragonballsparkingzero.webp",
+    src: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2Ffooter%2Fdragonballsparkingzero.webp?alt=media",
   },
   {
     alt: "Tekken 8",
-    src: "/footer/icon/tekken8.webp",
+    src: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2Ffooter%2Ftekken8.webp?alt=media",
   },
   {
     alt: "Street Fighter 6",
-    src: "/footer/icon/streetfighter6.webp",
+    src: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2Ffooter%2Fstreetfighter6.webp?alt=media",
   },
 ];
 

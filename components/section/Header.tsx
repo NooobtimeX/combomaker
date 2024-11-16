@@ -48,7 +48,7 @@ export default function Header() {
               </Link>
             </div>
             <Link href="/" className="hidden md:flex items-center">
-              <h2>combo maker</h2>
+              <h2>COMBO MAKER</h2>
             </Link>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">

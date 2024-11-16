@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className="relative isolate px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-6">
             <div className="text-center">
-              <h1 className="font-bold text-red-600">Combo Maker!</h1>
+              <h1 className="font-bold text-red-600">COMBO MAKER!</h1>
               <Image
                 src={"/combo.webp"}
                 alt="combomaker.net"

@@ -26,13 +26,22 @@ export const metadata: Metadata = {
 
 const AboutUs: React.FC = () => {
   const images = [
-    { src: "/game/icon/tekken8.webp", alt: "Tekken 8" },
-    { src: "/game/icon/2xko.webp", alt: "2xko" },
     {
-      src: "/game/icon/dragonballsparkingzero.webp",
-      alt: "dragonball sparking zero",
+      alt: "2xko",
+      src: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2F2xko.webp?alt=media",
     },
-    { src: "/game/icon/streetfighter6.webp", alt: "street fighter 6" },
+    {
+      alt: "Dragon Ball: Sparking Zero",
+      src: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2Fdragonballsparkingzero.webp?alt=media",
+    },
+    {
+      alt: "Tekken 8",
+      src: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2Ftekken8.webp?alt=media",
+    },
+    {
+      alt: "Street Fighter 6",
+      src: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2Fstreetfighter6.webp?alt=media",
+    },
   ];
 
   const features = [
@@ -62,16 +71,16 @@ const AboutUs: React.FC = () => {
             <div className="flex w-full flex-col items-start justify-center gap-6">
               <div className="flex w-full flex-col items-center justify-start gap-3 lg:items-start">
                 <h2 className="font-manrope text-center text-red-500 lg:text-start">
-                  ComboMaker
+                  COMBO MAKER
                 </h2>
                 <p className="text-center text-base font-normal leading-relaxed lg:text-start">
-                  Welcome to <span className="text-red-500">ComboMaker</span>,
+                  Welcome to <span className="text-red-500">COMBO MAKER</span>,
                   your go-to platform for creating custom fighting game combos!
                   Our web app allows you to craft unique combos with ease,
                   empowering both casual players and competitive gamers to
                   explore new possibilities and improve their gameplay. With an
                   intuitive interface and support for multiple fighting games,{" "}
-                  <span className="text-red-500">ComboMaker</span> is designed
+                  <span className="text-red-500">COMBO MAKER</span> is designed
                   to enhance your experience by giving you full control over
                   combo creation, testing, and sharing. Whether you re a
                   beginner or an expert, we re here to help you level up your
