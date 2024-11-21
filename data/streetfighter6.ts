@@ -1,7 +1,7 @@
 const tekken8 = {
   id: "street_fighter_6",
   name: "Street Fighter 6",
-  img: "/game/icon/streetfighter6.webp",
+  img: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2Fstreetfighter6.webp?alt=media",
   items: [
     {
       name: "Directional",

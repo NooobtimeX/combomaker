@@ -1,7 +1,7 @@
 const projectl = {
   id: "2xko",
   name: "2XKO",
-  img: "/game/icon/2xko.webp",
+  img: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2F2xko.webp?alt=media",
   items: [
     {
       name: "Directional",

@@ -1,7 +1,7 @@
 const dragonBallSparkingZero = {
   id: "dragon_ball_sparking_zero",
   name: "Dragon Ball: Sparking Zero",
-  img: "/game/icon/dragonballsparkingzero.webp",
+  img: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2Fdragonballsparkingzero.webp?alt=media",
   items: [
     {
       name: "Playstation",

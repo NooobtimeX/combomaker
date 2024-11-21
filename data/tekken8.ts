@@ -1,7 +1,7 @@
 const tekken8 = {
   id: "tekken_8",
   name: "Tekken 8",
-  img: "/game/icon/tekken8.webp",
+  img: "https://firebasestorage.googleapis.com/v0/b/combomaker/o/gameicon%2Ftekken8.webp?alt=media",
   items: [
     {
       name: "Directional",
