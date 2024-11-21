@@ -1,16 +1,7 @@
-// interfaces.ts
-
 export interface Character {
   id: number;
   name: string;
   img: string;
-}
-
-export interface Item {
-  id: number;
-  name: string;
-  img: string;
-  isSwapHorizontal?: boolean;
 }
 
 export interface GameItem {

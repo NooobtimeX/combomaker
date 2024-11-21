@@ -1,4 +1,4 @@
-import { Item } from "@/interface/interface";
+import { GameItem } from "@/interface/interface";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
 
@@ -12,7 +12,7 @@ export const saveState = (key: string, state: any) => {
 };
 
 export const handleAddItem = (
-  item: Item,
+  item: GameItem,
   userCreation: number[],
   undoStack: number[][],
   setUserCreation: React.Dispatch<React.SetStateAction<number[]>>,
