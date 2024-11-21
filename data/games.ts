@@ -1,7 +1,7 @@
-import projectl from "@/data/2xko";
-import dragonBallSparkingZero from "@/data/dragonBallSparkingZero";
-import streetfighter6 from "@/data/streetfighter6";
-import tekken8 from "@/data/tekken8";
+import projectl from "@/data/game/2xko";
+import dragonBallSparkingZero from "@/data/game/dragonBallSparkingZero";
+import streetfighter6 from "@/data/game/streetfighter6";
+import tekken8 from "@/data/game/tekken8";
 
 export const games = [
   projectl,
