@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
-import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
@@ -38,7 +37,7 @@ export default function Header() {
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
             <div className="flex-shrink-0 flex">
               <Link href="/" className="m-auto">
-                <Image
+                <img
                   src="/favicon.ico"
                   className="w-9"
                   alt="HoYoSmash"

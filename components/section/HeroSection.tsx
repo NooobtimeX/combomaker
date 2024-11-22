@@ -2,7 +2,6 @@
 
 import React from "react";
 
-import Image from "next/image";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -14,12 +13,11 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl py-6">
             <div className="text-center">
               <h1 className="font-bold text-red-600">COMBO MAKER!</h1>
-              <Image
+              <img
                 src={"/combo.webp"}
                 alt="combomaker.net"
                 width={300}
                 height={60}
-                priority
                 className="mx-auto py-2"
               />
               <p className="m-2 text-lg leading-8">

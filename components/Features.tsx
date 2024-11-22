@@ -1,7 +1,6 @@
 import React from "react";
 
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us | Combo Maker",
@@ -57,7 +56,7 @@ const AboutUs: React.FC = () => {
         <div className="grid w-full grid-cols-1 items-center justify-start gap-12 lg:grid-cols-2">
           <div className="order-last grid w-full grid-cols-2 items-start justify-center gap-6 sm:grid-cols-2 lg:order-first">
             {images.map((image, index) => (
-              <Image
+              <img
                 key={index}
                 className="rounded-xl object-cover"
                 src={image.src}

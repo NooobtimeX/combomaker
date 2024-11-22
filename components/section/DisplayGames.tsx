@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 
 interface Game {
@@ -28,13 +27,12 @@ export default function DisplayGames({ games }: DisplayGamesProps) {
                 href={game.id}
                 className="aspect-w-1 aspect-h-1 block w-full overflow-hidden rounded-t-xl"
               >
-                <Image
+                <img
                   alt={game.name}
                   src={game.img}
                   className="h-full w-full rounded-xl object-cover"
                   width={500}
                   height={500}
-                  priority={index === 0}
                 />
               </a>
               <div className="flex flex-col items-center space-y-2">

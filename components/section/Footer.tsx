@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-import Image from "next/image";
 import Link from "next/link";
 
 const links = [
@@ -56,7 +55,7 @@ const Footer: React.FC = () => {
               key={index}
               className="m-auto transition duration-300 hover:scale-105"
             >
-              <Image
+              <img
                 className="my-auto rounded-xl object-cover"
                 src={image.src}
                 alt={image.alt}

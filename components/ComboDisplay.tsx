@@ -3,7 +3,6 @@ import { FaRedo, FaSave, FaTrash, FaUndo } from "react-icons/fa";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 
 import { ComboDisplayProps, GameItem } from "@/interface/interface";
-import Image from "next/image";
 
 const ComboDisplay: React.FC<ComboDisplayProps> = ({
   userCreation,
@@ -129,7 +128,7 @@ const ComboDisplay: React.FC<ComboDisplayProps> = ({
                     className="aspect-w-1 aspect-h-1 group relative"
                     key={`${id}-${index}`}
                   >
-                    <Image
+                    <img
                       src={item.img}
                       alt={item.name}
                       width={200}
@@ -166,7 +165,7 @@ const ComboDisplay: React.FC<ComboDisplayProps> = ({
             {category.items.map((item: GameItem) => (
               <div key={item.id} className="group relative">
                 <div className="aspect-w-1 aspect-h-1">
-                  <Image
+                  <img
                     onClick={() =>
                       handleAddItem(
                         item,
