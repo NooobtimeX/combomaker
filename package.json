@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@next/third-parties": "15.1",
+    "esbuild": "^0.24.0",
     "file-saver": "^2.0.5",
     "html-to-image": "^1.11.11",
     "jszip": "^3.10.1",
